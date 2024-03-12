@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Affichage de chaîne de caractères</title>
+</head>
+<body>
+
+    <h1>Mes <span>cocktails préférés</span></h1>
+    <p>Mojito</p>
+    <p>Gin Fizz</p>
+    <p>Bloody mary</p>
+    <p>Long Island Iced Tea</p>
+    <p>Mais si je ne devais qu'en retenir qu'un : <strong id="cocktail"></strong></p>
+    
+    <div id="images-container"></div>
+<script>
+//ex1
+/*
+var userInput = prompt("Veuillez entrer une chaîne de caractères :");
+
+// Insérer la chaîne de caractères dans la page HTML
+document.write("<p>La chaîne que vous avez entrée est : " + userInput + "</p>");
+*/
+
+//ex2
+
+/*
+let a =1;
+let b =2;
+let res=a+b;
+alert("La somme de "+a+" et "+ b+ " est "+res)
+*/
+//ex3
+/*
+let budget=100;
+let achats=150;
+if(budget>achats){alert("Le budget permet de payer les achats");}
+else{alert("Le budget ne permet pas de payer les achats");} 
+*/
+//ex4
+/*
+var prixHT= prompt("Veuillez entrer le prix HT :")
+prixHT=parseFloat(prixHT);
+if(!isNaN(prixHT)){
+    var prixTTC=prixHT*1.20;
+    document.body.innerText="Le prix TTC est "+prixTTC;
+}
+else{
+    document.body.innerText="Le prix saisi n'est pas valide"
+}
+*/
+//ex5: A refaire
+/*
+var prixHT;
+
+do {
+    prixHT = prompt("Veuillez entrer le prix HT :");
+    prixHT = parseFloat(prixHT);
+    
+    if (isNaN(prixHT)) {
+        alert("Veuillez entrer un nombre.");
+    } else if (prixHT <= 0) {
+        alert("Veuillez entrer un nombre positif.");
+    }
+} while (isNaN(prixHT) || prixHT <= 0);
+
+var TVA;
+
+do {
+    TVA = prompt("Veuillez entrer le taux de la TVA :");
+    TVA = parseFloat(TVA);
+    
+    if (isNaN(TVA)) {
+        alert("Veuillez entrer un nombre.");
+    } else if (TVA <= 0) {
+        alert("Veuillez entrer un nombre positif.");
+    }
+} while (isNaN(TVA) || TVA <= 0);
+
+var prixTTC=prixHT * (1 + TVA / 100);
+
+document.body.innerText="Le prix TTC est "+prixTTC;
+
+*/
+//ex6
+
+/*
+var prixHT;
+
+do {
+    prixHT = prompt("Veuillez entrer le prix HT :");
+    prixHT = parseFloat(prixHT);
+    
+    if (isNaN(prixHT)) {
+        alert("Veuillez entrer un nombre.");
+    } else if (prixHT <= 0) {
+        alert("Veuillez entrer un nombre positif.");
+    }
+} while (isNaN(prixHT) || prixHT <= 0);
+
+var TVA;
+
+do {
+    TVA = prompt("Veuillez entrer le taux de la TVA :");
+    TVA = parseFloat(TVA);
+    
+    if (isNaN(TVA)) {
+        alert("Veuillez entrer un nombre.");
+    } else if (TVA <= 0) {
+        alert("Veuillez entrer un nombre positif.");
+    }
+} while (isNaN(TVA) || TVA <= 0);
+
+var prixTTC=prixHT * (1 + TVA / 100);
+if (prixTTC > 100) {
+    document.body.innerHTML = '<h1 style="color: red;">Le prix TTC (TVA ' + TVA + '%) pour un prix HT de ' + prixHT.toFixed(2) + ' est : ' + prixTTC.toFixed(2) + '</h1>';
+}
+
+else {
+                    document.body.innerHTML = "<p style=\"color: green;\">Le prix TTC (TVA " +TVA + "%) pour un prix HT de " + prixHT.toFixed(2) + " est : " + prixTTC.toFixed(2) + "</p>";
+                }
+
+
+
+
+*/
+//ex7
+
+/*
+var cocktailElement = document.getElementById("cocktail");
+
+// Vérifier si l'élément existe avant de lui assigner un nouveau contenu
+if (cocktailElement) {
+    cocktailElement.textContent = "Long Island Iced Tea";
+} else {
+    console.error("L'élément avec l'ID 'cocktail' n'existe pas.");
+}
+
+window.onload = function() {
+    var chaine = prompt("Veuillez entrer une chaîne de caractères :");
+    document.getElementById("chaineInserer").innerText = chaine;
+};
+*/
+//ex8
+
+/*
+// Fonction pour générer un nombre aléatoire entre min et max inclusivement
+function getRandomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+// Nombre de lignes (X) et de colonnes (Y)
+var X = 2; // Nombre de lignes
+var Y = 3; // Nombre de colonnes
+
+// Construction du tableau HTML
+var tableHTML = "<table border='1'>";
+
+// Boucle pour ajouter X lignes
+for (var i = 0; i < X; i++) {
+    tableHTML += "<tr>"; // Ajouter une nouvelle ligne
+    
+    // Boucle pour ajouter Y colonnes dans chaque ligne
+    for (var j = 0; j < Y; j++) {
+        // Générer un contenu aléatoire (dans cet exemple, un nombre aléatoire)
+        var contenu = getRandomNumber(1, 100);
+        
+        // Ajouter une cellule avec le contenu aléatoire
+        tableHTML += "<td>" + contenu + "</td>";
+    }
+    
+    tableHTML += "</tr>"; // Fermer la ligne
+}
+
+tableHTML += "</table>"; // Fermer le tableau
+
+// Insérer le tableau dans la page HTML
+document.body.innerHTML = tableHTML;
+
+*/
+//ex9
+
+/*
+// Fonction pour générer un nombre aléatoire entre min et max inclusivement
+function getRandomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+// Nombre de lignes (X) et de colonnes (Y)
+var X = prompt("entrer le nombre  de lignes"); // Nombre de lignes
+var Y = prompt("entrer le nombre  de colonnes"); // Nombre de colonnes
+
+// Construction du tableau HTML
+var tableHTML = "<table border='1'>";
+
+// Boucle pour ajouter X lignes
+for (var i = 0; i < X; i++) {
+    tableHTML += "<tr>"; // Ajouter une nouvelle ligne
+    
+    // Boucle pour ajouter Y colonnes dans chaque ligne
+    for (var j = 0; j < Y; j++) {
+        // Générer un contenu aléatoire (dans cet exemple, un nombre aléatoire)
+        var contenu = getRandomNumber(1, 100);
+        
+        // Ajouter une cellule avec le contenu aléatoire
+        tableHTML += "<td>" + contenu + "</td>";
+    }
+    
+    tableHTML += "</tr>"; // Fermer la ligne
+}
+
+tableHTML += "</table>"; // Fermer le tableau
+
+// Insérer le tableau dans la page HTML
+document.body.innerHTML = tableHTML;
+
+*/
+
+//ex 10:
+/*
+// Créer une liste non ordonnée
+const ul = document.createElement('ul');
+
+// Ajouter la liste au corps du document
+document.body.appendChild(ul);
+
+// Boucle pour générer et ajouter 10 nombres aléatoires à la liste
+for (let i = 0; i < 10; i++) {
+    // Générer un nombre aléatoire entre 0 et 99 inclus
+    const randomNumber = Math.floor(Math.random() * 100);
+
+    // Créer un nouvel élément de liste
+    const li = document.createElement('li');
+
+    // Ajouter le nombre aléatoire comme texte de l'élément de liste
+    li.textContent = randomNumber;
+
+    // Ajouter l'élément de liste à la liste non ordonnée
+    ul.appendChild(li);
+}
+
+*/
+//ex 11:
+/*
+var red = Math.floor(Math.random() * 256);
+var green = Math.floor(Math.random() * 256);
+var blue = Math.floor(Math.random() * 256);
+
+document.body.style.background = 'rgb('+ red + ',' + green + ',' + blue + ')';
+
+*/
+
+
+
+//ex 12:
+/*
+var numberOfImages = 12;
+
+        // Répéter pour chaque image
+        for (var i = 0; i < numberOfImages; i++) {
+            // Générer un identifiant d'image aléatoire
+            var imageId = Math.floor(Math.random() * 1000) + 1; // Nombre aléatoire entre 1 et 1000
+
+            // Créer une balise img avec le lien vers l'image Picsum
+            var img = document.createElement('img');
+            img.src = 'https://picsum.photos/id/' + imageId + '/350/350';
+            img.alt = 'Image ' + (i + 1); // Ajouter un texte alternatif pour l'accessibilité
+
+            // Ajouter l'image au conteneur d'images
+            document.getElementById('images-container').appendChild(img);
+        }
+
+*/
+</script>
+
+</body>
+
+
+</html>
+
+
+
+
+
